@@ -124,3 +124,20 @@ following is a sample YAML configuration for implementing nested navigation.
 
 Dividers can only be use with top-level nav items. Sub-level nav items doesn't
 support `hasDivider: true` property.
+
+Make sure you have a `pathPrefix` value set in your `gatsby-config.js` file for
+this to function correctly. If you're not using a `pathPrefix`, you can simply
+set it to an empty string like this:
+
+```javascript
+module.exports = {
+  trailingSlash: `always`,
+  siteMetadata: {
+   ...
+  },
+  pathPrefix: ``,
+  plugins: [
+    ...
+  ],
+};
+```

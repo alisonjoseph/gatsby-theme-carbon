@@ -110,10 +110,24 @@ npx gatsby-codemods@latest sort-and-aggr-graphql
     </AccordionItem>
 
    <AccordionItem
-      title="Utilizing tree nav requires setting a PATH_PREFIX environment variable"
+      title="Utilizing tree nav requires pathPrefix"
       open={true}>
-```jsx
-PATH_PREFIX = /website/prefix
+
+Make sure you have a `pathPrefix` value set in your `gatsby-config.js` file for
+this to function correctly. If you're not using a `pathPrefix`, you can simply
+set it to an empty string like this:
+
+```javascript
+module.exports = {
+  trailingSlash: `always`,
+  siteMetadata: {
+   ...
+  },
+  pathPrefix: ``,
+  plugins: [
+    ...
+  ],
+};
 ```
 
       </AccordionItem>

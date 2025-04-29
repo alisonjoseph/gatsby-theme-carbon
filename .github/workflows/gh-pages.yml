@@ -59,8 +59,6 @@ jobs:
         run: yarn install
 
       - name: Build with Gatsby
-        env:
-          PREFIX_PATHS: 'true'
         run: yarn build
 
       - name: Add CNAME record
